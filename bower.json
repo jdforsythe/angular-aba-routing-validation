@@ -1,0 +1,26 @@
+{
+  "name": "angular-aba-routing-validation",
+  "description": "Angular directive for validating ABA routing number",
+  "main": "./dist/angular-aba-routing-validation.js",
+  "authors": [
+    "Jeremy Forsythe <jdforsythe@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "bank",
+    "routing",
+    "aba",
+    "validation",
+    "directive",
+    "form"
+  ],
+  "homepage": "http://github.com/jdforsythe/angular-aba-routing-validation.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
