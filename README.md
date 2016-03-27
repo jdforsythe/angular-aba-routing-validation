@@ -1,6 +1,8 @@
 angular-aba-routing-validation
 ==============================
 
+[![Build Status](https://travis-ci.org/jdforsythe/angular-aba-routing-validation.svg?branch=master)](https://travis-ci.org/jdforsythe/angular-aba-routing-validation)
+
 An Angular directive for validating a routing number input field.
 
 ## Installation
