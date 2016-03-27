@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    karma = require('karma').Server;
+    KarmaServer = require('karma').Server;
 
 
 gulp.task('jshint', function() {
@@ -23,7 +23,7 @@ gulp.task('dist', function() {
 });
 
 gulp.task('test', function(done) {
-  new Server({
+  new KarmaServer({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
   }, done).start();
