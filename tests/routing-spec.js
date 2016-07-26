@@ -83,5 +83,18 @@ describe('directives', function() {
       expect(form.routing.$error.abaRoutingInternal).toBeUndefined();
       expect(form.routing.$error.abaRouting).toBeUndefined();
     });
+
+    it('should pass if empty and not required', function() {
+      delete $scope.model.routing;
+      form.routing.$setViewValue(null);
+      $scope.$digest();
+      expect($scope.model.routing).toBe(null);
+      expect(form.routing.$valid).toBe(true);
+
+      form.routing.$setViewValue('');
+      $scope.$digest();
+      expect($scope.model.routing).toBe('');
+      expect(form.routing.$valid).toBe(true);
+    });
   });
 });

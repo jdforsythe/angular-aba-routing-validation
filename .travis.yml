@@ -5,8 +5,8 @@ before_script:
   - npm install -g gulp
   - npm install phantomjs
   - npm install -g karma
+  - npm install -g eslint
   - npm install
-  - gulp jshint
 after_script:
+  - gulp lint
   - gulp test
-  
