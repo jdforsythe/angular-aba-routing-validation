@@ -1,23 +1,28 @@
-var gulp = require('gulp'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    KarmaServer = require('karma').Server;
+'use strict';
+
+const gulp = require('gulp');
+const eslint = require('gulp-eslint');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const KarmaServer = require('karma').Server;
 
 
-gulp.task('jshint', function() {
-  gulp.src('./src/angular-aba-routing-validation.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter());
+gulp.task('lint', function() {
+  gulp.src('./src/**/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
-gulp.task('dist', function() {
+gulp.task('dist', ['lint', 'test'], function() {
   // first copy the pretty version to ./dist
   gulp.src('./src/angular-aba-routing-validation.js')
     .pipe(gulp.dest('./dist'));
 
   gulp.src('./src/angular-aba-routing-validation.js')
-    .pipe(uglify())
+    .pipe(uglify({
+      preserveComments: 'license',
+    }))
     .pipe(rename('angular-aba-routing-validation.min.js'))
     .pipe(gulp.dest('./dist'));
 });
@@ -25,6 +30,6 @@ gulp.task('dist', function() {
 gulp.task('test', function(done) {
   new KarmaServer({
     configFile: __dirname + '/karma.conf.js',
-    singleRun: true
+    singleRun: true,
   }, done).start();
 });

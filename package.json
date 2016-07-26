@@ -1,6 +1,6 @@
 {
   "name": "angular-aba-routing-validation",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Angular directive for validating ABA routing number",
   "main": "index.js",
   "scripts": {
@@ -31,12 +31,12 @@
   "devDependencies": {
     "angular": "^1.5.3",
     "angular-mocks": "^1.5.3",
+    "eslint": "^3.1.1",
     "gulp": "^3.9.1",
-    "gulp-jshint": "^2.0.0",
+    "gulp-eslint": "^3.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
     "jasmine-core": "^2.4.1",
-    "jshint": "^2.9.1",
     "karma": "^0.13.22",
     "karma-jasmine": "^0.3.8",
     "karma-phantomjs-launcher": "^1.0.0",
