@@ -1,6 +1,6 @@
 {
   "name": "angular-aba-routing-validation",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Angular directive for validating ABA routing number",
   "main": "./dist/angular-aba-routing-validation.js",
   "authors": [
