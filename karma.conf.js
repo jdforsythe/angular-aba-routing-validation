@@ -1,5 +1,4 @@
-// Karma configuration
-// Generated on Sun Mar 27 2016 03:17:28 GMT-0400 (Eastern Daylight Time)
+'use strict';
 
 module.exports = function(config) {
   config.set({
@@ -18,7 +17,7 @@ module.exports = function(config) {
       './node_modules/angular/angular.js',
       './node_modules/angular-mocks/angular-mocks.js',
       './src/angular-aba-routing-validation.js',
-      'tests/*.js'
+      'tests/*.js',
     ],
 
 
@@ -67,6 +66,6 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
-  })
-}
+    concurrency: Infinity,
+  });
+};

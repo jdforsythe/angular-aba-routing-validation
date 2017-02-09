@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0",
+  "args": [
+    "--no-color"
+  ],
+  "tasks": [
+    {
+      "taskName": "lint",
+      "command": "gulp",
+      "args": ["lint"],
+      "isShellCommand": true
+    },
+    {
+      "taskName": "build",
+      "command": "gulp",
+      "args": ["dist"],
+      "isShellCommand": true,
+      "isBuildCommand": true
+    },
+    {
+      "taskName": "test",
+      "command": "gulp",
+      "args": ["test"],
+      "isShellCommand": true,
+      "isTestCommand": true
+    }
+  ]
+}

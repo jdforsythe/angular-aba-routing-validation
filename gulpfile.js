@@ -5,6 +5,7 @@ const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const KarmaServer = require('karma').Server;
+const path = require('path');
 
 
 gulp.task('lint', function() {
@@ -29,7 +30,7 @@ gulp.task('dist', ['lint', 'test'], function() {
 
 gulp.task('test', function(done) {
   new KarmaServer({
-    configFile: __dirname + '/karma.conf.js',
+    configFile: path.join(__dirname, '/karma.conf.js'),
     singleRun: true,
   }, done).start();
 });

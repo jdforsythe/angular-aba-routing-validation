@@ -1,4 +1,4 @@
-/* angular-aba-routing-validation v1.0.0 (https://github.com/jdforsythe/angular-aba-routing-validation) */
+/* angular-aba-routing-validation (https://github.com/jdforsythe/angular-aba-routing-validation) */
 'use strict';
 (function() {
   angular.module('angular-aba-routing-validation', [])
@@ -15,14 +15,14 @@
 
         return function(scope, elm, attrs, ngModel) {
           ngModel.$validators.abaRoutingMinLength = function(value) {
-            if (!value || value === '') return true;
+            if (!value) return true;
             value = String(value);
             if (value.length < 9) return false;
             return true;
           };
 
           ngModel.$validators.abaRoutingMaxLength = function(value) {
-            if (!value || value === '') return true;
+            if (!value) return true;
             value = String(value);
             if (value.length > 9) return false;
             return true;
@@ -30,7 +30,7 @@
 
           // internal routing numbers begin with a 5 - these are not valid routing numbers
           ngModel.$validators.abaRoutingInternal = function(value) {
-            if (!value || value === '') return true;
+            if (!value) return true;
             value = String(value);
             if (value.length < 1) return true; // don't fail if we don't have a value yet
             if (value.substring(0, 1) === '5') return false;
@@ -38,7 +38,7 @@
           };
 
           ngModel.$validators.abaRouting = function(value) {
-            if (!value || value === '') return true;
+            if (!value) return true;
             if (typeof value !== 'string') return false;
 
             // should be 9 digits, not starting with a 5
